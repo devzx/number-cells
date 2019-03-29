@@ -58,10 +58,12 @@ func table(s []int, c int) {
 	}
 	fmt.Printf("\n+")
 
-	if len(s)%c == 0 {
+	if len(s)%c == 0 && c != 1 {
 		for range s {
 			fmt.Printf("%s+", rowArt)
 		}
+	} else if c == 1 {
+		fmt.Printf("%s+", rowArt)
 	} else {
 		for i := 0; i < len(s)%c; i++ {
 			fmt.Printf("%s+", rowArt)
